@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Roboto')
+//color
+colorGrey = #efefef
+colorDarkGrey = #dddddd
+colorTransWhite = rgba(234, 234, 234, 0.6)
+colorDarkBlue = #0f3f6e
+//fonts
+fontRoboto = 'Roboto', sans-serif
+fontNunito = 'Nunito', sans-serif
+
+//mixins
+box-shadow()
+  box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.15)
+
+transition(element, effect)
+  transition: element 0.5s effect
+
+flex-center()
+  display: flex
+  align-items: center
+  justify-content: center
+
+title(color)
+  font-size: 26px
+  color: color
+  font-family: fontRoboto
+
+container-size(color, width, height, left)
+ background-color: color
+ width: width
+ height: height
+ position: absolute
+ left: left
+ padding: 30px
+
+input-container()
+  border: none
+  background-color: colorGrey
+  width: 100%
+  border-radius: 5px
+  margin-top: 20px
+  padding: 10px
+
+//var
+bodyMargin = 1.666%
+
+body
+  font-family: fontRoboto
+  background-color: #69b6ea
+  .app-container
+    width: 100vw
+    height: 100vh
+    flex-center()
+
+    .app-form
+      width: 800px
+      height: 500px
+      background: white
+      position: absolute
+      box-shadow()
+      flex-center()
+      @media screen and (max-width: 759px) and (min-width: 320px)
+        background: none
+        box-shadow: none
+        width: 320px
+        height: 568px
+        position: relative
+
+.contact-container
+        container-size(colorDarkBlue, 350px, 420px, -45px)
+        box-shadow()
+        @media screen and (max-width: 825px) and (min-width: 760px)
+          left: 0
+        @media screen and (max-width: 759px) and (min-width: 320px)
+          width: 320px
+          height: 400px
+          position: absolute
+          left: 0
+          top: 450px
+        .title
+          title(white)
+
+        .contact-info
+          margin-top: 30px
+          margin-bottom: 25px
+          color: colorTransWhite
+          .fa
+            font-size: 25px
+            width: 40px
+          >span
+            font-family: fontNunito
+            font-weight: 100
+        .icon-list
+          a
+            color: colorTransWhite
+            &:hover
+               color: colorDarkGrey
+            .fa
+              font-size: 25px
+              padding: 20px
+
+
+.get-in-touch-container
+  container-size(white, 450px, 420px, 340px)
+  @media screen and (max-width: 759px) and (min-width: 320px)
+    width: 320px
+    height: 450px
+    top: 0
+    left: 0
+  .title
+    title(colorDarkBlue)
+  .sub-title
+    color: colorDarkGrey
+    font-size: 18px
+    font-family: fontRoboto
+    margin-top: 10px
+
+  .input
+    input-container()
+    &:focus
+      outline: none
+
+    &.text-input
+      height: 45px
+
+    &.textarea-input
+      resize: none
+
+  .send-btn
+    display: inline-block
+    margin-top: 30px
+    background-color: #4e7fba
+    color: white
+    border-radius: 25px
+    padding: 15px 50px
+    cursor: pointer
+    box-shadow()
+    &:focus
+      outline: none
+
+// @media screen and (max-width: 759px) and (min-width: 320px)
+//   body
+//     .app-container
+//       .app-form
+//         background: none
+//         box-shadow: none
+//         width: 320px
+//         height: 568px
+//         position: relative
+//         .contact-container
+//           width: 320px
+//           height: 400px
+//           position: absolute
+//           left: 0
+//           top: 450px
+//         .get-in-touch-container
+//           width: 320px
+//           height: 450px
+//           top: 0
+//           left: 0
